@@ -31,6 +31,14 @@ If we only have one board there is still the practical advantage for the player 
 
 * *Starting position*: This constitutes the placement of pieces for both white and black sides on a standard chessboard, which side (white or black) should play the first move, what kind of castlings are allowed for both sides if any, what kind of en passant is allowed if any. Basically contains all the information in a [FEN](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation) except for information regarding move count or information regarding fifty move (or hundred move) rule. There is also no need to specify any information regarding threefold repetition the starting position will be considered to be reached for the first time.
 
+* *Proposing player*: The player who proposes the position on a specific board, will be referred to as the 'proposing player' on that board.
+
+* *Choosing player*: The player who chooses the what side to play on a specific board, will be referred to as the 'choosing player' on that board. Therefore, on any single board we will have exactly one proposing player and exactly one choosing player.
+
+* *Proposing board*: The board on which a particular player is the proposing player, will be referred to as the 'proposing board'.
+
+* *Choosing board*: The board on which a particular player is the choosing player, will be referred to as the 'choosing board'. Therefore, on any single player will have exactly one proposing board and exactly one choosing board.
+
 ## Phases of Play
 
 ### Proposal Phase
@@ -43,9 +51,11 @@ If we only have one board there is still the practical advantage for the player 
 
 * At start of the playing phase, the choices made by the players will be revealed to each other.
 
-* Then immedietely they play against each other from the proposed starting positions with their chosen sides under some pre-specified time control that will be referred to as 'playing time control'. This time control can have Fischer increment or Bronstein delay like in standard chess. There will be two chess clocks set to the playing time control, one per board.
+* Then immedietely they play against each other from the proposed starting positions with their chosen sides under some pre-specified time control that will be referred to as 'playing time control'. This time control can have Fischer increment or Bronstein delay like in standard chess. There will be two chess clocks set to the playing time control, one per board. Having two chess clocks has the positive side-effect of making time scrambles more interesting, at least for the audience.
 
 * The playing rules are largely same as that of standard chess with exception of starting position, any ambiguities regarding who should move first or castling or en passant is resolved by referring to the specification of the starting position.
+
+* The 50/100-move rule counter is assumed to be zero in the starting position. Also, we do not assume any repetitions have taken place for the threefold repetition rule to kick in. 
 
 ## Scoring and Winner Determination
 
@@ -71,38 +81,26 @@ The proposer can gamble by proposing a position that is winning for one-side but
 
 # Additional Rules and Variations
 
-The following rules could additionally be adopted:
+The following rules could be adopted in context of tournaments or matches:
 
-* One could disallow players from proposing certain positions. Like positions with weird pawn structures, or unusual positions with weird combination of pieces like five minor pieces versus three rooks positions. This would ideally be decided by a software that the players had access to while they were preparing what position to propose.
+* Armageddon could be played with both players bidding their playing time control until their proposed times are distinct, with the player who bid the lower time having draw odds. Both the players will have to play with the time control they bid on both the boards. 
 
-* Time formats (proposal and play. heterogenous and homogenous). Time scrambles. Number of moves.
+* Win (or respectively draw) on the choosing board rewards a higher score than a win (or respectively draw) on the proposing board.
 
-* Armageddon (both propose and play with bidding time, lower time bidder gets plays with draw odds)
+The following variations of rules could also be adopted:
 
-* 50/100 move rule, 3-fold repetition
+* One could disallow players from proposing certain positions. Like positions with weird pawn structures, or unusual positions with weird combination of pieces like five minor pieces versus three rooks positions. This would ideally be decided by a software that the players had access to while they were preparing what position to propose. I leave the specific details of what kinds of positions to be allowed or disallowed to someone more qualified than me. 
 
-* Point system for tournaments
+* One could potentially have a playing time control that gives the proposing player less time than the choosing player, or vice versa. 
 
-* Sequential play instead of simultaneous but committed to the position initially. Time scrambles.
-
-* Allowing to look at opponents proposal and changing.
-
-* Early cutoff of proposal time
-
-* Should we reveal whether the opponent has decided or not.
-
-* Failing to choose consider completely lost?
-
-* Alternative scoring?
+* One could also play the two boards one after another instead of playing them simultaneously. However, this makes time scrambles less interesting.
 
 # Join the Conversation
 
-* Already knows
+If any of you are familiar with a similar chess variant (or some other game), please let me know. Provide your feedback on the rules, in what ways can it be altered to make it more interesting, and any problems with the rules if you spot any.
 
-* Feedback on additional rules
+How do you think this will affect the kinds of games that will be played? Will this make it necessary for players to become more universal, as players won't be able to avoid positions that don't suit their taste?
 
-* Quality of games
+This proposal style like rules could be adopted for other games like [Go](https://en.wikipedia.org/wiki/Go_(game)), [Shogi](https://en.wikipedia.org/wiki/Shogi), [Xiangqi](https://en.wikipedia.org/wiki/Xiangqi), [Backgammon](https://en.wikipedia.org/wiki/Backgammon), etc. My hunch is that this should work for any two player (or two teams) [perfect information](https://en.wikipedia.org/wiki/Perfect_information) games that can be played simultaneously (one could play one game after another to relax the requirement of simultaneity).
 
-* Other two player board games (no need to restrict to chess)
-
-* Play and have fun
+Thank you, for reading! Having fun playing this game and let me know about your experience.
