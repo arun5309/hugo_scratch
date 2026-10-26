@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on My New Hugo Project</title>
+    <link>http://localhost:1313/en/</link>
+    <description>Recent content in Home on My New Hugo Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Oct 2026 14:28:39 +0530</lastBuildDate><atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proposal Chess</title>
+      <link>http://localhost:1313/en/posts/proposal-chess/</link>
+      <pubDate>Mon, 26 Oct 2026 14:28:39 +0530</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/proposal-chess/</guid>
+      
+      <description>&lt;h1 id=&#34;tldr&#34;&gt;TLDR&lt;/h1&gt;
+&lt;p&gt;Proposal Chess is a chess variant designed to reduce the impact of opening preparation.&lt;/p&gt;
+&lt;p&gt;Before the game begins, each player secretly proposes a starting position for one board. On each board, the opposing player chooses which side they wish to play from that position. The game is then played on both boards simultaneously.&lt;/p&gt;
+&lt;p&gt;This &amp;ldquo;proposal-and-choice&amp;rdquo; mechanism prevents players from proposing blatantly favorable positions while still allowing them to steer games toward positions they understand well. Because each player proposes one board and chooses on the other, the format is fully symmetric.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
