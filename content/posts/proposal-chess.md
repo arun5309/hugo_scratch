@@ -5,13 +5,22 @@ title = 'Proposal Chess'
 toc = false
 genre = ['chess', 'game-theory', 'game-design']
 tags = ['chess', 'game-design']
+
 [params]
   author = 'Arunachalaeshwaran V R'
 +++
 
 # TLDR
 
-Proposal chess is a chess variant that aims to reduce the emphasis on opening preparation similar to [Chess960](https://en.wikipedia.org/wiki/Chess960). Unlike Chess960 which achieves this by starting with a position that is likely unfamiliar to both the two players, proposal chess achieves this by having each player proposing a starting position for their proposing board. This does not eliminate the need for preparation completely but reduces it as there is only one position you need to prepare per game. Also, you can possibly forget your preparation once the game is over as it unlikely that you will reuse the same preparation (this is not applicable to online games or for lower-rated players). Naively, letting a player propose has the problem of the player proposing a position in which they will mate their opponent in one move. This is resolved by having one player propose the starting position and letting the other player decide who plays with what color. This resolves the issue in a manner similar to how the [cake-cutting](https://en.wikipedia.org/wiki/Fair_cake-cutting) problem is solved.
+Proposal Chess is a chess variant designed to reduce the impact of opening preparation.
+
+Before the game begins, each player secretly proposes a starting position for one board. On each board, the opposing player chooses which side they wish to play from that position. The game is then played on both boards simultaneously.
+
+This "proposal-and-choice" mechanism prevents players from proposing blatantly favorable positions while still allowing them to steer games toward positions they understand well. Because each player proposes one board and chooses on the other, the format is fully symmetric.
+
+# Introduction
+
+Proposal chess is a chess variant that aims to reduce the emphasis on opening preparation similar to [Chess960](https://en.wikipedia.org/wiki/Chess960). Unlike Chess960 which achieves this by starting with a position that is likely unfamiliar to both the players, proposal chess achieves this by having each player proposing a starting position for their proposing board. This does not eliminate the need for preparation completely but reduces it as there is only one position you need to prepare per game. Also, you can possibly forget your preparation once the game is over as it unlikely that you will reuse the same preparation (this is not applicable to online games or for lower-rated players). Naively, letting a player propose has the problem of the player proposing a position in which they will mate their opponent in one move. This is resolved by having one player propose the starting position and letting the other player decide who plays with what color. This resolves the issue in a manner similar to how the [cake-cutting](https://en.wikipedia.org/wiki/Fair_cake-cutting) problem is solved.
 
 # Mathematical Inspiration (Skip if not interested)
 
@@ -33,11 +42,11 @@ If we only have one board there is still the practical advantage for the player 
 
 ## Glossary
 
-* *Starting position*: This constitutes the placement of pieces for both white and black sides on a standard chessboard, which side (white or black) should play the first move, what kind of castlings are allowed for both sides if any, what kind of en passant is allowed if any. Basically contains all the information in a [FEN](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation) except for information regarding move count or information regarding fifty move (or hundred move) rule. There is also no need to specify any information regarding threefold repetition the starting position will be considered to be reached for the first time.
+* *Starting position*: This constitutes the placement of pieces for both white and black sides on a standard chessboard, which side (white or black) should play the first move, what kind of castlings are allowed for both sides if any, what kind of en passant is allowed if any. Basically contains all the information in a [FEN](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation) except for information regarding move count or information regarding fifty move (or hundred move) rule. There is also no need to specify any information regarding threefold repetition the starting position will be considered to be reached for the first time. For simplicity I will allow any valid FEN in which is not a checkmate position to be considered an acceptable starting position.
 
 * *Proposing player*: The player who proposes the position on a specific board, will be referred to as the 'proposing player' on that board.
 
-* *Choosing player*: The player who chooses the what side to play on a specific board, will be referred to as the 'choosing player' on that board. Therefore, on any single board we will have exactly one proposing player and exactly one choosing player.
+* *Choosing player*: The player who chooses the which side to play on a specific board, will be referred to as the 'choosing player' on that board. Therefore, on any single board we will have exactly one proposing player and exactly one choosing player.
 
 * *Proposing board*: The board on which a particular player is the proposing player, will be referred to as the 'proposing board'.
 
@@ -49,13 +58,13 @@ If we only have one board there is still the practical advantage for the player 
 
 * At the start of this phase Player X will propose the starting position of Board 1, and Player Y will propose the starting position of Board 2. They will both do so without looking at the starting position proposed by their opponent even partially. Ideally they would come with their starting positions printed on a piece of paper and hand it to the arbiter.
 
-* Then both the players get to see the starting position proposed by their opponent. Then Player X will choose if he will play with white or black pieces on Board 2, and Player Y will choose if he will play with white or black pieces on Board 1. All of this should happen within a pre-specified duration, that will be referred to as the 'choosing time'. They will choose without revealing their choice to the opponent. This can be perfomed by placing a coin under a opaque cup, with heads corresponding to white and tails corresponding to black. If a player fails to choose his color within the choosing time they are considered lost on that board but not considered lost on the entire game and they are allowed to play the other board.
+* Then both the players get to see the starting position proposed by their opponent. Then Player X will choose if he will play with white or black pieces on Board 2, and Player Y will choose if he will play with white or black pieces on Board 1. All of this should happen within a pre-specified duration, that will be referred to as the 'choosing time'. They will choose without revealing their choice to the opponent. This can be performed by placing a coin under a opaque cup, with heads corresponding to white and tails corresponding to black. If a player fails to choose his color within the choosing time they are considered lost on that board but not considered lost on the entire game and they are allowed to play the other board.
 
 ### Playing Phase
 
 * At start of the playing phase, the choices made by the players will be revealed to each other.
 
-* Then immedietely they play against each other from the proposed starting positions with their chosen sides under some pre-specified time control that will be referred to as 'playing time control'. This time control can have Fischer increment or Bronstein delay like in standard chess. There will be two chess clocks set to the playing time control, one per board. Having two chess clocks has the positive side-effect of making time scrambles more interesting, at least for the audience.
+* Then immediately they play against each other from the proposed starting positions with their chosen sides under some pre-specified time control that will be referred to as 'playing time control'. This time control can have Fischer increment or Bronstein delay like in standard chess. There will be two chess clocks set to the playing time control, one per board. Having two chess clocks has the positive side-effect of making time scrambles more interesting, at least for the audience.
 
 * The playing rules are largely same as that of standard chess with exception of starting position, any ambiguities regarding who should move first or castling or en passant is resolved by referring to the specification of the starting position.
 
@@ -73,11 +82,11 @@ If we only have one board there is still the practical advantage for the player 
 
 ## Proposing a One-Sided Position
 
-Proposing a position in which one-side is clearly winning is a poor strategy as your opponent will simply choose the winning side.
+Proposing a position in which one side is clearly winning is a poor strategy as your opponent will simply choose the winning side.
 
 ## Proposing an Equal Position
 
-Proposing an objectively equal position is the best strategy mathematically speaking. However, it must be an interesting position for the proposing player to get an advantage out of the proposal. This will be strategy that will be adopted by chess gods who play perfect chess. One could also propose a posistion that plays to your strengths or plays against your opponent's weaknesses. Like, proposing a complex tactical position against a positional player.
+Proposing an objectively equal position is the best strategy mathematically speaking. However, it must be an interesting position for the proposing player to get an advantage out of the proposal. This will be strategy that will be adopted by chess gods who play perfect chess. One could also propose a position that plays to your strengths or plays against your opponent's weaknesses. Like, proposing a complex tactical position against a positional player.
 
 ## Gambling with the Proposal
 
@@ -101,10 +110,10 @@ The following variations of rules could also be adopted:
 
 # Join the Conversation
 
-If any of you are familiar with a similar chess variant (or some other game), please let me know. Provide your feedback on the rules, in what ways can it be altered to make it more interesting, and any problems with the rules if you spot any.
+If any of you are familiar with a similar chess variant (or some other game), please let me know. Provide your feedback on the rules, in what ways can the design of this game be improved, and any problems with the rules if you spot any.
 
 How do you think this will affect the kinds of games that will be played? Will this make it necessary for players to become more universal, as players won't be able to avoid positions that don't suit their taste?
 
-This proposal style like rules could be adopted for other games like [Go](https://en.wikipedia.org/wiki/Go_(game)), [Shogi](https://en.wikipedia.org/wiki/Shogi), [Xiangqi](https://en.wikipedia.org/wiki/Xiangqi), [Backgammon](https://en.wikipedia.org/wiki/Backgammon), etc. My hunch is that this should work for any two player (or two teams) [perfect information](https://en.wikipedia.org/wiki/Perfect_information) games that can be played simultaneously (one could play one game after another to relax the requirement of simultaneity).
+This style of proposal-based rules could be adopted for other games like [Go](https://en.wikipedia.org/wiki/Go_(game)), [Shogi](https://en.wikipedia.org/wiki/Shogi), [Xiangqi](https://en.wikipedia.org/wiki/Xiangqi), [Backgammon](https://en.wikipedia.org/wiki/Backgammon), etc. My hunch is that this should work for any two player (or two teams) [perfect information](https://en.wikipedia.org/wiki/Perfect_information) games that can be played simultaneously (one could play one game after another to relax the requirement of simultaneity).
 
 Thank you, for reading! Having fun playing this game and let me know about your experience.
