@@ -43,7 +43,7 @@ If we only have one board there is still the practical advantage for the player 
 
 * At start of the playing phase, the choices made by the players will be revealed to each other.
 
-* Then immedietely they play against each other from the proposed starting positions with their chosen sides under some pre-specified time control that will be referred to as 'playing time control'. This time control can have Fischer increment or Bronstein delay like in standard chess.
+* Then immedietely they play against each other from the proposed starting positions with their chosen sides under some pre-specified time control that will be referred to as 'playing time control'. This time control can have Fischer increment or Bronstein delay like in standard chess. There will be two chess clocks set to the playing time control, one per board.
 
 * The playing rules are largely same as that of standard chess with exception of starting position, any ambiguities regarding who should move first or castling or en passant is resolved by referring to the specification of the starting position.
 
@@ -59,17 +59,21 @@ If we only have one board there is still the practical advantage for the player 
 
 ## Proposing a One-Sided Position
 
+Proposing a position in which one-side is clearly winning is a poor strategy as your opponent will simply choose the winning side.
+
 ## Proposing an Equal Position
+
+Proposing an objectively equal position is the best strategy mathematically speaking. However, it must be an interesting position for the proposing player to get an advantage out of the proposal. This will be strategy that will be adopted by chess gods who play perfect chess. One could also propose a posistion that plays to your strengths or plays against your opponent's weaknesses. Like, proposing a complex tactical position against a positional player.
 
 ## Gambling with the Proposal
 
-## Exploiting your Opponent's Weakness
-
-Universality
+The proposer can gamble by proposing a position that is winning for one-side but that is hard for humans to understand. This is a viable strategy in practice but comes with a lot of risks.
 
 # Additional Rules and Variations
 
-* Positions to exclude (weird pawn structures, weird piece combos)
+The following rules could additionally be adopted:
+
+* One could disallow players from proposing certain positions. Like positions with weird pawn structures, or unusual positions with weird combination of pieces like five minor pieces versus three rooks positions. This would ideally be decided by a software that the players had access to while they were preparing what position to propose.
 
 * Time formats (proposal and play. heterogenous and homogenous). Time scrambles. Number of moves.
 
