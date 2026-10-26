@@ -1,5 +1,5 @@
 +++
-date = '2026-09-20T14:28:39+05:30'
+date = '2026-10-26T14:28:39+05:30'
 draft = false
 title = 'Proposal Chess'
 toc = false
