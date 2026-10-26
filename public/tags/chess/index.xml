@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chess on My New Hugo Project</title>
+    <link>http://localhost:1313/tags/chess/</link>
+    <description>Recent content in Chess on My New Hugo Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Oct 2026 14:28:39 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/chess/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proposal Chess</title>
+      <link>http://localhost:1313/posts/proposal-chess/</link>
+      <pubDate>Mon, 26 Oct 2026 14:28:39 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/proposal-chess/</guid>
+      
+      <description>&lt;h1 id=&#34;tldr&#34;&gt;TLDR&lt;/h1&gt;
+&lt;p&gt;Proposal chess is a chess variant that aims to reduce the emphasis on opening preparation similar to &lt;a href=&#34;https://en.wikipedia.org/wiki/Chess960&#34;&gt;Chess960&lt;/a&gt;. Unlike Chess960 which achieves this by starting with a position that is likely unfamiliar to both the two players, proposal chess achieves this by having each player proposing a starting position for their proposing board. This does not eliminate the need for preparation completely but reduces it as there is only one position you need to prepare per game. Also, you can possibly forget your preparation once the game is over as it unlikely that you will reuse the same preparation (this is not applicable to online games or for lower-rated players). Naively, letting a player propose has the problem of the player proposing a position in which they will mate their opponent in one move. This is resolved by having one player propose the starting position and letting the other player decide who plays with what color. This resolves the issue in a manner similar to how the &lt;a href=&#34;https://en.wikipedia.org/wiki/Fair_cake-cutting&#34;&gt;cake-cutting&lt;/a&gt; problem is solved.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
